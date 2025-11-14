@@ -1,40 +1,40 @@
 Brain Tumor Detection using Convolutional Neural Networks (CNN)
 
-This project builds and evaluates a Convolutional Neural Network (CNN) to classify brain MRI scans as either tumor or non-tumor. The notebook includes the complete pipeline: dataset download, preprocessing, training, evaluation, and prediction on custom images.
+This project implements a Convolutional Neural Network (CNN) to classify brain MRI scans as either tumor or non-tumor. It includes dataset download, preprocessing, model training, evaluation, and single-image prediction.
 
 Project Overview
 
-This repository contains a Jupyter Notebook that demonstrates:
+This repository contains a Jupyter Notebook demonstrating:
 
 Downloading the MRI dataset using KaggleHub
 
-Loading and preprocessing images
+Loading and preprocessing MRI images
 
-Building a CNN model using TensorFlow/Keras
+Building a CNN using TensorFlow/Keras
 
-Training the model with proper train–test splitting
+Training with a proper train–test split
 
-Evaluating performance using accuracy, loss, classification report, and confusion matrix
+Evaluating with accuracy, loss curves, classification report, and confusion matrix
 
-Testing the model on both dataset images and user-uploaded MRI images
+Testing predictions on dataset images and custom-uploaded MRI scans
 
-The project uses grayscale MRI images and performs binary classification (tumor vs. no tumor).
+The project performs binary classification on grayscale MRI images.
 
 Features
 
-Automated dataset download using KaggleHub
+Automatic dataset download
 
-Image preprocessing with OpenCV
+Image preprocessing using OpenCV
 
-CNN architecture with multiple convolution and pooling layers
+CNN with multiple convolution + pooling layers
 
-Training visualization (accuracy and loss plots)
+Training visualizations
 
-Confusion matrix and classification report
+Classification report & confusion matrix
 
-Single-image prediction helper function
+Single-image prediction function
 
-User-upload support for testing custom MRI scans
+Support for uploading custom MRI images
 
 Technologies Used
 
@@ -56,12 +56,13 @@ KaggleHub
 
 Dataset
 
-Dataset used:
-Brain MRI Images for Brain Tumor Detection
-Downloaded automatically using:
+Dataset: Brain MRI Images for Brain Tumor Detection
+Downloaded using:
+
 kagglehub.dataset_download("navoneel/brain-mri-images-for-brain-tumor-detection")
 
-Directory structure after download:
+
+Directory structure:
 
 brain_tumor_dataset/
    yes/
@@ -71,22 +72,22 @@ Model Architecture
 
 The CNN includes:
 
-Three convolutional blocks (Conv2D + MaxPooling)
+3 × Conv2D + MaxPooling layers
 
 Flatten layer
 
-Dense layer with ReLU activation
+Dense layer (ReLU)
 
-Dropout layer to prevent overfitting
+Dropout for regularization
 
-Output layer with sigmoid activation
+Output layer with Sigmoid activation
 
-Loss function: Binary Crossentropy
+Loss: Binary Crossentropy
 Optimizer: Adam
 
 Training
 
-The notebook trains the model for 20 epochs with:
+20 epochs
 
 Batch size: 32
 
@@ -94,15 +95,15 @@ Batch size: 32
 
 Stratified sampling to preserve class distribution
 
-Plots for accuracy and loss are generated.
+Training accuracy and loss curves are generated.
 
 Evaluation
 
-Metrics used:
+The notebook evaluates the model using:
 
-Accuracy (Train and Test)
+Accuracy
 
-Validation curves
+Loss curves
 
 Classification report
 
@@ -110,23 +111,26 @@ Confusion matrix
 
 Single Image Prediction
 
-A helper function predict_single_image() allows prediction on any given MRI image file.
-The notebook also supports manual file upload (via Google Colab) for real-time testing.
+A helper function allows prediction on any MRI image:
+
+predict_single_image("path_to_image.jpg")
+
+
+You can also upload images directly in the notebook (Google Colab).
 
 How to Use
 
-Open the notebook in Google Colab or Jupyter.
+Open the notebook in Jupyter or Google Colab
 
-Run all cells sequentially.
+Run all cells sequentially
 
-Upload an MRI image at the end to see the model’s prediction.
+Upload an MRI image to test the model's prediction
 
 File Structure
-Brain_Tumor_Detection.ipynb   # Main project notebook
+Brain_Tumor_Detection.ipynb   # Main notebook
 README.md                     # Project documentation
 
 Notes
 
-This project is intended for educational and experimental purposes.
-
-The model is not meant for clinical use or real medical diagnosis.
+This project is intended for educational and experimental purposes only.
+It is not suitable for real medical diagnosis.
