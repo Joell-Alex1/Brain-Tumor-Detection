@@ -134,9 +134,7 @@ This project is for educational and research purposes only. It is not validated 
 
 ---
 
-If you'd like, I can:
-- produce a requirements.txt for the project,
-- convert the notebook into a runnable Python script,
-- or create a short project README badge and a sample LICENSE file (MIT recommended).
+NOTES:
+This is for educational purposes only
 
 ```
